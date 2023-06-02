@@ -21,6 +21,12 @@
         todos = todos;
     }
 
+    function deleteAllTasks() {
+        if (confirm("Are you sure you want to delete all tasks?")) {
+            todos = [];
+        }
+    }
+    
     function toggleTask(index) {
         todos[index].completed = !todos[index].completed;
         todos = todos;
@@ -51,6 +57,8 @@
         </li>
     {/each}
 </ul>
+
+<button on:click={deleteAllTasks}>Delete All</button>
 
 <style>
     ul {
